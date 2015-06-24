@@ -1,0 +1,30 @@
+# Maintainer: Ross Whitfield <whitfieldre@ornl.gov>
+
+pkgname=mantid-developer
+pkgver=0.1
+pkgrel=1
+pkgdesc="Meta package to install all the dependancies required to build Mantid."
+url="http://www.mantidproject.org"
+arch=('any')
+licence=('unknown')
+depends=('cmake'
+	 'boost'
+	 'opencascade'
+	 'ipython2'
+	 'python2-matplotlib'
+	 'python2-numpy'
+	 'python2-pyqt4'
+	 'python2-scipy'
+	 'python2-sip'
+	 'python2-pyzmq'
+	 'muparser'
+	 'qtwebkit'
+	 'qscintilla'
+	 'qwtplot3d'
+	 'qwt5'
+	 'gsl'
+	 'gperftools'
+	 'hdf5'
+	 'hdf4'
+	 'libnexus'
+	 'poco1.4')
