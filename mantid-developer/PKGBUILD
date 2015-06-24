@@ -28,3 +28,8 @@ depends=('cmake'
 	 'hdf4'
 	 'libnexus'
 	 'poco1.4')
+optdepends=('doxygen'
+	    'python2-sphinx'
+	    'python2-sphinx-bootstrap-theme'
+	    'python2-pylint'
+	    'ninja')
