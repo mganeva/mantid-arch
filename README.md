@@ -6,7 +6,7 @@ It includes the PKGBUILD files for the following packages:
 * hdf4 (without netcdf)
 * libnexus
 * poco (version 1.4.7)
-* mantid-developer (Meta packages to install the dependancies that mantid requires.
+* mantid-developer (Meta package to install the dependancies that mantid requires)
 
 To build mantid use the following cmake command then run `make`:
 ```
