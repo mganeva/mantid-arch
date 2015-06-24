@@ -28,8 +28,9 @@ depends=('cmake'
 	 'hdf4'
 	 'libnexus'
 	 'poco1.4')
-optdepends=('doxygen'
-	    'python2-sphinx'
-	    'python2-sphinx-bootstrap-theme'
-	    'python2-pylint'
-	    'ninja')
+optdepends=('doxygen: to build Doxygen code documentation'
+	    'texlive-core: needed by doxygen'
+	    'python2-sphinx: to build user documentation'
+	    'python2-sphinx-bootstrap-theme: needed by sphinx'
+	    'python2-pylint: to run pylint on mantid'
+	    'ninja: alternative to make')
