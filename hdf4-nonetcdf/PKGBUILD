@@ -1,4 +1,5 @@
-# Maintainer: Fazlul Shahriar <fshahriar@gmail.com>
+# Maintainer: Ross Whitfield <whitfieldre@ornl.gov>
+# Contributor: Fazlul Shahriar <fshahriar@gmail.com>
 # Contributor: David Scholl <djscholl@gmail.com>
 pkgname=hdf4-nonetcdf
 pkgver=4.2.11

@@ -1,4 +1,5 @@
-# Maintainer: Ido Rosen <ido@kernel.org>
+# Maintainer: Ross Whitfield <whitfieldre@ornl.gov>
+# Contributor: Ido Rosen <ido@kernel.org>
 # Contributor: Mateusz Paluszkiewcz <aifam96 at gmail dot com>
 
 pkgname=poco1.4
