@@ -27,7 +27,7 @@ depends=('cmake'
 	 'hdf5'
 	 'hdf4'
 	 'libnexus'
-	 'poco1.4')
+	 'poco>=1.4.2' 'poco<1.6.0')
 optdepends=('doxygen: to build Doxygen code documentation'
 	    'texlive-core: needed by doxygen'
 	    'python2-sphinx: to build user documentation'

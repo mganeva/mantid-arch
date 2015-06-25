@@ -2,7 +2,7 @@
 # Contributor: Ido Rosen <ido@kernel.org>
 # Contributor: Mateusz Paluszkiewcz <aifam96 at gmail dot com>
 
-pkgname=poco1.4
+pkgname=poco
 _pkgver=1.4.7
 pkgver=1.4.7
 pkgrel=1
