@@ -1,4 +1,5 @@
-# Maintainer: Harry Jeffery <harry|@|exec64|.|co|.|uk>
+# Maintainer: Ross Whitfield <whitfieldre@ornl.gov>
+# Contributor: Harry Jeffery <harry|@|exec64|.|co|.|uk>
 
 pkgname=libnexus
 pkgver=4.3.3
