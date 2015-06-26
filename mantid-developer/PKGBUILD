@@ -24,7 +24,7 @@ depends=('cmake'
 	 'qwt5'
 	 'gsl'
 	 'gperftools'
-	 'hdf5'
+	 'hdf5-cpp-fortran'
 	 'hdf4'
 	 'libnexus'
 	 'poco>=1.4.2' 'poco<1.6.0')
