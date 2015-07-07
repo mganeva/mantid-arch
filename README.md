@@ -6,7 +6,7 @@ It includes the PKGBUILD files for the following packages:
 * hdf4 (without netcdf because it conflicts with opencascade)
 * libnexus (install hdf4 before building this)
 * poco (version 1.4.7, must be at least 1.4.2 but less than 1.6.0)
-* python-matplotlib-qt4 (this build has Qt4 backend preferred over Qt5, because Mantid)
+* python-matplotlib-qt4 (this build has Qt4 backend preferred over Qt5 because conflicts with Mantid Qt)
 * mantid-developer (Meta package to install the dependencies that mantid requires)
 
 To build mantid use the following cmake command then run `make`:
