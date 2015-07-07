@@ -14,8 +14,6 @@ pkgdesc="A python plotting library, making publication quality plots"
 arch=('i686' 'x86_64')
 url='http://matplotlib.org'
 license=('custom')
-provides=('python2-matplotlib' 'python-matplotlib')
-conflicts=('python2-matplotlib' 'python-matplotlib')
 checkdepends=('python-nose' 'python2-nose' 'python-mock' 'python2-mock' 'xorg-server-xvfb'
               'texlive-core' 'texlive-latexextra' 'imagemagick' 'ffmpeg' 'mencoder' 'inkscape')
 makedepends=('python2-pytz' 'python2-numpy' 'python2-pyqt4' 'python-pytz' 'python-numpy'
@@ -91,6 +89,8 @@ package_python2-matplotlib-qt4() {
                'python2-gobject: for GTK3Agg/GTK3Cairo backend'
                'wxpython: for WX/WXAgg backend'
                'python2-pillow: for reading/saving .jpg/bmp/tiff files')
+   provides=('python2-matplotlib')
+   conflicts=('python2-matplotlib')
 
    cd matplotlib-${pkgver}-py2
    python2 setup.py install -O1 --skip-build --root "${pkgdir}" --prefix=/usr
@@ -109,6 +109,8 @@ package_python-matplotlib-qt4() {
                'texlive-bin: usetex dependencies'
                'python-tornado: for webagg backend'
                'python-pillow: for reading/saving .jpg/bmp/tiff files')
+   provides=('python-matplotlib')
+   conflicts=('python-matplotlib')
 
    cd matplotlib-${pkgver}
    python3 setup.py install -O1 --skip-build --root "${pkgdir}" --prefix=/usr
