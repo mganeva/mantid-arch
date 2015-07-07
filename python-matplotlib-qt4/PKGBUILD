@@ -15,6 +15,7 @@ arch=('i686' 'x86_64')
 url='http://matplotlib.org'
 license=('custom')
 provides=('python2-matplotlib' 'python-matplotlib')
+conflicts=('python2-matplotlib' 'python-matplotlib')
 checkdepends=('python-nose' 'python2-nose' 'python-mock' 'python2-mock' 'xorg-server-xvfb'
               'texlive-core' 'texlive-latexextra' 'imagemagick' 'ffmpeg' 'mencoder' 'inkscape')
 makedepends=('python2-pytz' 'python2-numpy' 'python2-pyqt4' 'python-pytz' 'python-numpy'
