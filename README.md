@@ -13,3 +13,7 @@ To build mantid use the following cmake command then run `make`:
 ```
 cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYQT4_SIP_DIR=/usr/share/sip/PyQt4 -DOPENCASCADE_LIBRARY_DIR=/opt/opencascade/lib -DOPENCASCADE_INCLUDE_DIR=/opt/opencascade/inc ../Code/Mantid
 ```
+or with VATES
+```
+cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYQT4_SIP_DIR=/usr/share/sip/PyQt4 -DOPENCASCADE_LIBRARY_DIR=/opt/opencascade/lib -DOPENCASCADE_INCLUDE_DIR=/opt/opencascade/inc -DMAKE_VATES=TRUE -DParaView_DIR=~paraview/build ../Code/Mantid
+```
