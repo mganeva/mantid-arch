@@ -10,10 +10,10 @@ It includes the PKGBUILD files for the following packages:
 * mantid-developer (Meta package to install the dependencies that mantid requires)
 
 To build mantid use the following cmake command then run `make`:
-```
+```sh
 cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYQT4_SIP_DIR=/usr/share/sip/PyQt4 -DOPENCASCADE_LIBRARY_DIR=/opt/opencascade/lib -DOPENCASCADE_INCLUDE_DIR=/opt/opencascade/inc ../Code/Mantid
 ```
 or with VATES
-```
+```sh
 cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYQT4_SIP_DIR=/usr/share/sip/PyQt4 -DOPENCASCADE_LIBRARY_DIR=/opt/opencascade/lib -DOPENCASCADE_INCLUDE_DIR=/opt/opencascade/inc -DMAKE_VATES=TRUE -DParaView_DIR=~/ParaView/build ../Code/Mantid
 ```
