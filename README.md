@@ -12,9 +12,9 @@ It includes the PKGBUILD files for the following packages:
 
 To build mantid use the following cmake command then run `make`:
 ```sh
-cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYQT4_SIP_DIR=/usr/share/sip/PyQt4 -DOPENCASCADE_LIBRARY_DIR=/opt/opencascade/lib -DOPENCASCADE_INCLUDE_DIR=/opt/opencascade/inc ../Code/Mantid
+cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 -DOPENCASCADE_LIBRARY_DIR=/opt/opencascade/lib -DOPENCASCADE_INCLUDE_DIR=/opt/opencascade/inc ../Code/Mantid
 ```
 or with VATES
 ```sh
-cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYQT4_SIP_DIR=/usr/share/sip/PyQt4 -DOPENCASCADE_LIBRARY_DIR=/opt/opencascade/lib -DOPENCASCADE_INCLUDE_DIR=/opt/opencascade/inc -DMAKE_VATES=TRUE -DParaView_DIR=~/ParaView/build ../Code/Mantid
+cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 -DOPENCASCADE_LIBRARY_DIR=/opt/opencascade/lib -DOPENCASCADE_INCLUDE_DIR=/opt/opencascade/inc -DMAKE_VATES=TRUE -DParaView_DIR=~/ParaView/build ../Code/Mantid
 ```
