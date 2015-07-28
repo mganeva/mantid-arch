@@ -26,7 +26,6 @@ depends=(
   'python2-pyzmq'
   'python2-scipy'
   'python2-sip'
-  'opencascade'
 )
 makedepends=(
     'cmake'
