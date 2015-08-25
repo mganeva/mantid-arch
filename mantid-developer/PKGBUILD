@@ -2,7 +2,7 @@
 
 pkgname=mantid-developer
 pkgver=0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Meta package to install all the dependancies required to build Mantid."
 url="http://www.mantidproject.org"
 arch=('any')
@@ -10,7 +10,7 @@ licence=('unknown')
 depends=('cmake'
 	 'boost'
 	 'opencascade'
-	 'ipython2'
+	 'ipython2-notebook'
 	 'python2-numpy'
 	 'python2-pyqt4'
 	 'python2-scipy'
