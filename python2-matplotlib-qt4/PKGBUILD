@@ -8,7 +8,7 @@
 
 pkgbase=python-matplotlib
 pkgname=('python2-matplotlib-qt4')
-pkgver=1.4.3
+pkgver=1.5.0
 pkgrel=2
 pkgdesc="A python plotting library, making publication quality plots"
 arch=('i686' 'x86_64')
@@ -18,18 +18,17 @@ checkdepends=('python2-nose' 'python2-mock' 'xorg-server-xvfb'
               'texlive-core' 'texlive-latexextra' 'imagemagick' 'ffmpeg' 'mencoder' 'inkscape')
 makedepends=('python2-pytz' 'python2-numpy' 'python2-pyqt4'
              'tk' 'python2-cairocffi' 'python2-dateutil' 'python2-gobject'
-             'python2-pyparsing' 'pygtk' 'ghostscript' 'texlive-bin'
+             'python2-pyparsing' 'pygtk' 'python-six' 'ghostscript' 'texlive-bin'
              'python2-tornado' 'gtk3' 'wxpython' 'python2-pyqt5'
-             'libxkbcommon-x11' 'python2-pillow')
+             'libxkbcommon-x11' 'python2-pillow'
+             'python2-setuptools' 'python2-cycler' 'pep8' 'python2-pep8'
+             'python2-pandas')
 provides=('python2-matplotlib')
 conflicts=('python2-matplotlib')
-source=("$pkgbase-$pkgver.tar.gz::https://github.com/matplotlib/matplotlib/archive/v$pkgver.tar.gz"
-	"setup.patch")
-sha512sums=('4aebbda31934bedbee5206b783e5cbe07db17367d50117a50bb80b7ea4aad987ec225958bed58885c561f00582c309d6e8c0a69861d3b4210a09b2d63975d2aa'
-	    '6bb7c6729ae76a2c5dcfd47d4e61bf4361b1505f1e689c33eae35c39083ac4d19851feafa0fef6f2a7d8f4be9787b282668b26b2688fa89d865344ca91483a6b')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/matplotlib/matplotlib/archive/v$pkgver.tar.gz")
+sha512sums=('017797c139383e1878cbd4b5595c192f2dedf649e2d268d4bad5421e4a955f3da6d1c9011ce29d6f3487709bb3a8592693d8914335f9f95254a2e267e7ea1cf5')
 
 prepare() {
-
    cd matplotlib-${pkgver}
    for file in $(find . -name '*.py' -print); do
       sed -i -e "s|^#!.*/usr/bin/python|#!/usr/bin/python2|" \
@@ -59,7 +58,7 @@ check() {
 }
 
 package() {
-   depends=('python2-pytz' 'python2-numpy' 'python2-pyqt5' 'python2-dateutil' 'python2-pyparsing' 'libxkbcommon-x11')
+   depends=('python2-pytz' 'python2-numpy' 'python2-pyqt5' 'python2-dateutil' 'python2-pyparsing' 'python2-cycler' 'libxkbcommon-x11')
    optdepends=('pygtk: for GTK/GTKAgg/GTKCairo backend'
                'python2-cairo: for GTKCairo/GTK3Cairo backend'
                'python2-cairocffi: for GTKCairo/GTK3Cairo backend (alternative to python2-cairo)'

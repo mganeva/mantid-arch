@@ -1,12 +1,12 @@
---- setup.py	2015-07-07 16:17:30.580786029 -0400
-+++ setup.py.qt4	2015-07-07 16:25:14.086289638 -0400
-@@ -92,8 +92,8 @@
+--- setup.py	2015-12-09 14:10:34.527821700 -0500
++++ setup.py.qt4	2015-12-09 14:06:52.928326396 -0500
+@@ -95,8 +95,8 @@
      # being the most preferred.  The first one that looks like it will
      # work will be selected as the default backend.
      setupext.BackendMacOSX(),
 -    setupext.BackendQt5(),
      setupext.BackendQt4(),
 +    setupext.BackendQt5(),
-     setupext.BackendPySide(),
      setupext.BackendGtk3Agg(),
      setupext.BackendGtk3Cairo(),
+     setupext.BackendGtkAgg(),
