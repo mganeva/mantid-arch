@@ -2,7 +2,7 @@
 
 pkgname=mantid-developer
 pkgver=0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Meta package to install all the dependancies required to build Mantid."
 url="http://www.mantidproject.org"
 arch=('any')
@@ -27,7 +27,7 @@ depends=('cmake'
 	 'hdf5-cpp-fortran'
 	 'hdf4'
 	 'libnexus'
-	 'poco>=1.4.2' 'poco<1.6.0')
+	 'poco>=1.4.2')
 optdepends=('doxygen: to build Doxygen code documentation'
 	    'texlive-core: needed by doxygen'
 	    'python2-sphinx: to build user documentation'

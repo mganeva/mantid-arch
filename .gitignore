@@ -2,5 +2,6 @@ src
 pkg
 *.tar.gz
 *.tar.xz
+*.bz2
 *.rpm
 *~
