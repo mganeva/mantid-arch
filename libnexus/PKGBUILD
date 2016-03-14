@@ -3,7 +3,7 @@
 
 pkgname=libnexus
 pkgver=4.3.3
-pkgrel=1
+pkgrel=2
 pkgdesc="libnexus provides functionality for loading/saving the nexus file format for scientific data"
 url="http://www.nexusformat.org/"
 arch=('x86_64' 'i686')
@@ -16,6 +16,7 @@ sha1sums=('89f1e7ec5706868f9a488a44aeb2305587ab5180')
 build() {
   cd "${srcdir}/code-${pkgver}"
   ./autogen.sh
+  sed -i 's,PYTHONROOT/bin/python,PYTHONROOT/bin/python2,g' configure # Find python2 not 3
   ./configure --prefix="${pkgdir}/usr"
   make
 }
