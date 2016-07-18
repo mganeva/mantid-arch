@@ -2,28 +2,26 @@
 # Contributor: Harry Jeffery <harry|@|exec64|.|co|.|uk>
 
 pkgname=libnexus
-pkgver=4.3.3
-pkgrel=2
+pkgver=4.4.2
+pkgrel=1
 pkgdesc="libnexus provides functionality for loading/saving the nexus file format for scientific data"
 url="http://www.nexusformat.org/"
 arch=('x86_64' 'i686')
 license=('GPL')
 depends=('hdf5')
 optdepends=('hdf4: hdf4 file format support')
-source=("https://github.com/nexusformat/code/archive/${pkgver}.tar.gz")
-sha1sums=('89f1e7ec5706868f9a488a44aeb2305587ab5180')
+source=("https://github.com/nexusformat/code/archive/v${pkgver}.tar.gz")
+sha1sums=('97a248d425b2b3a57480c407ea6ada9aebc67305')
 
 build() {
   cd "${srcdir}/code-${pkgver}"
-  ./autogen.sh
-  sed -i 's,PYTHONROOT/bin/python,PYTHONROOT/bin/python2,g' configure # Find python2 not 3
-  ./configure --prefix="${pkgdir}/usr"
+  cmake -DENABLE_HDF4=ON -DENABLE_CXX=ON -DENABLE_APPS=ON -DENABLE_FORTRAN90=ON -DENABLE_FORTRAN77=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib .
   make
 }
 
 package() {
   cd "${srcdir}/code-${pkgver}"
-  make install
+  make DESTDIR="${pkgdir}" install
 }
 
 # vim:set ts=2 sw=2 et:
