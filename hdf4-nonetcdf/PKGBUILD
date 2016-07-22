@@ -20,7 +20,7 @@ build() {
   cd ${srcdir}/hdf-${pkgver}
   
   export CFLAGS=$CFLAGS" -fPIC"
-  ./configure --prefix=/usr F77=gfortran --disable-netcdf --disable-fortran
+  ./configure --prefix=/usr F77=gfortran --disable-netcdf --disable-fortran --enable-shared
   make
 }
 
