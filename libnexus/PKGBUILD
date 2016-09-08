@@ -2,7 +2,8 @@
 # Contributor: Harry Jeffery <harry|@|exec64|.|co|.|uk>
 
 pkgname=libnexus
-pkgver=4.4.2
+pkgver=4.4.3_rc1
+_pkgver=4.4.3-rc1
 pkgrel=1
 pkgdesc="libnexus provides functionality for loading/saving the nexus file format for scientific data"
 url="http://www.nexusformat.org/"
@@ -10,17 +11,17 @@ arch=('x86_64' 'i686')
 license=('GPL')
 depends=('hdf5')
 optdepends=('hdf4: hdf4 file format support')
-source=("https://github.com/nexusformat/code/archive/v${pkgver}.tar.gz")
-sha1sums=('97a248d425b2b3a57480c407ea6ada9aebc67305')
+source=("https://github.com/nexusformat/code/archive/v${_pkgver}.tar.gz")
+sha1sums=('da8cb3202fa0729012b8a12709005ce072eb9c7a')
 
 build() {
-  cd "${srcdir}/code-${pkgver}"
+  cd "${srcdir}/code-${_pkgver}"
   cmake -DENABLE_HDF4=ON -DENABLE_CXX=ON -DENABLE_APPS=ON -DENABLE_FORTRAN90=ON -DENABLE_FORTRAN77=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib .
   make
 }
 
 package() {
-  cd "${srcdir}/code-${pkgver}"
+  cd "${srcdir}/code-${_pkgver}"
   make DESTDIR="${pkgdir}" install
 }
 
