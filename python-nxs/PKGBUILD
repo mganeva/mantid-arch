@@ -7,8 +7,8 @@ url="https://github.com/nexusformat/python-nxs"
 arch=("any")
 license=('LGPLv2')
 makedepends=('python-setuptools')
-source=("git+https://github.com/nexusformat/python-nxs.git")
-md5sums=('SKIP')
+source=("git+https://github.com/nexusformat/python-nxs.git" "python3.patch")
+md5sums=('SKIP' '9b54be4a09d5d001d7a75f93a43a2606')
 
 pkgver() {
     cd $srcdir/python-nxs
@@ -17,6 +17,8 @@ pkgver() {
 
 prepare() {
     cp -a "${srcdir}/python-nxs"{,-py2}
+    cd ${srcdir}/python-nxs
+    patch -Np1 -i "${srcdir}/python3.patch"
 }
 
 package_python-nxs-git() {
