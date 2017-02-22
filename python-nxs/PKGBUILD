@@ -1,0 +1,32 @@
+# Maintainer: Ross Whitfield <whitfieldre@ornl.gov>
+pkgname=('python-nxs-git' 'python2-nxs-git')
+pkgver=r101.0add4b7
+pkgrel=1
+pkgdesc="Python bindings for NAPI"
+url="https://github.com/nexusformat/python-nxs"
+arch=("any")
+license=('LGPLv2')
+makedepends=('python-setuptools')
+source=("git+https://github.com/nexusformat/python-nxs.git")
+md5sums=('SKIP')
+
+pkgver() {
+    cd $srcdir/python-nxs
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+    cp -a "${srcdir}/python-nxs"{,-py2}
+}
+
+package_python-nxs-git() {
+    depends=('python-numpy')
+    cd "$srcdir/python-nxs"
+    python setup.py install --root="$pkgdir/" --optimize=1
+}
+
+package_python2-nxs-git() {
+    depends=('python2-numpy')
+    cd "$srcdir/python-nxs-py2"
+    python2 setup.py install --root="$pkgdir/" --optimize=1
+}
