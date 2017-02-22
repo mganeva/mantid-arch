@@ -9,11 +9,11 @@ It includes the PKGBUILD files for the following packages:
 
 To build mantid use the following cmake command then run `make`:
 ```sh
-cmake .
+cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 .
 ```
 or with VATES
 ```sh
-cmake -DMAKE_VATES=TRUE -DParaView_DIR=~/ParaView/build .
+cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 -DMAKE_VATES=TRUE -DParaView_DIR=~/ParaView/build .
 ```
 
 If cmake can't find opencascade add the following:
