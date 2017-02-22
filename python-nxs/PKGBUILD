@@ -23,12 +23,14 @@ prepare() {
 
 package_python-nxs-git() {
     depends=('python-numpy')
+    provides=('python-nxs')
     cd "$srcdir/python-nxs"
     python setup.py install --root="$pkgdir/" --optimize=1
 }
 
 package_python2-nxs-git() {
     depends=('python2-numpy')
+    provides=('python2-nxs')
     cd "$srcdir/python-nxs-py2"
     python2 setup.py install --root="$pkgdir/" --optimize=1
 }

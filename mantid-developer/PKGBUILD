@@ -2,35 +2,36 @@
 
 pkgname=mantid-developer
 pkgver=0.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Meta package to install all the dependancies required to build Mantid."
 url="http://www.mantidproject.org"
 arch=('any')
 licence=('unknown')
-depends=('cmake'
-	 'boost'
-	 'opencascade'
+depends=('boost'
+	 'cmake'
+	 'doxygen'
+	 'gperftools'
+	 'gsl'
+	 'hdf4'
+	 'hdf5-cpp-fortran'
 	 'ipython2-notebook'
+	 'libnexus'
+	 'muparser'
+	 'opencascade'
+	 'poco'
+	 'python2-h5py'
+	 'python2-matplotlib'
 	 'python2-numpy'
+	 'python2-nxs'
 	 'python2-pyqt4'
+	 'python2-pyzmq'
 	 'python2-scipy'
 	 'python2-sip'
-	 'python2-pyzmq'
-	 'python2-matplotlib'
-	 'muparser'
-	 'qtwebkit'
+	 'python2-sphinx'
+	 'python2-sphinx-bootstrap-theme'
+	 'python2-yaml'
 	 'qscintilla'
-	 'qwtplot3d'
+	 'qtwebkit'
 	 'qwt5'
-	 'gsl'
-	 'gperftools'
-	 'hdf5-cpp-fortran'
-	 'hdf4'
-	 'libnexus'
-	 'poco>=1.4.2')
-optdepends=('doxygen: to build Doxygen code documentation'
-	    'texlive-core: needed by doxygen'
-	    'python2-sphinx: to build user documentation'
-	    'python2-sphinx-bootstrap-theme: needed by sphinx'
-	    'python2-pylint: to run pylint on mantid'
-	    'ninja: alternative to make')
+	 'qwtplot3d'
+	 'texlive-core')
