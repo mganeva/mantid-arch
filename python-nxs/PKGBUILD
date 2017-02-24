@@ -1,14 +1,14 @@
 # Maintainer: Ross Whitfield <whitfieldre@ornl.gov>
 pkgname=('python-nxs-git' 'python2-nxs-git')
 pkgver=r101.0add4b7
-pkgrel=1
+pkgrel=2
 pkgdesc="Python bindings for NAPI"
 url="https://github.com/nexusformat/python-nxs"
 arch=("any")
 license=('LGPLv2')
 makedepends=('python-setuptools')
 source=("git+https://github.com/nexusformat/python-nxs.git" "python3.patch")
-md5sums=('SKIP' '9b54be4a09d5d001d7a75f93a43a2606')
+md5sums=('SKIP' '51dba85777d93a66c49b7b0c50e39b7e')
 
 pkgver() {
     cd $srcdir/python-nxs

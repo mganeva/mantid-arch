@@ -1,3 +1,25 @@
+diff --git a/nxs/napi.py b/nxs/napi.py
+index 88dcbe7..b80870a 100755
+--- a/nxs/napi.py
++++ b/nxs/napi.py
+@@ -371,7 +371,7 @@ class NeXus(object):
+         self.handle = c_void_p(None)
+         self._path = []
+         self._indata = False
+-        status = nxlib.nxiopen_(filename,mode,_ref(self.handle))
++        status = nxlib.nxiopen_(filename.encode(),mode,_ref(self.handle))
+         if status == ERROR:
+             if mode in [ACC_READ, ACC_RDWR]:
+                 op = 'open'
+@@ -418,7 +418,7 @@ class NeXus(object):
+             mode = ACC_READ
+         else:
+             mode = ACC_RDWR
+-        status = nxlib.nxiopen_(self.filename,mode,_ref(self.handle))
++        status = nxlib.nxiopen_(self.filename.encode(),mode,_ref(self.handle))
+         if status == ERROR:
+             raise NeXusError("Could not open %s" % (self.filename))
+         self._path = []
 diff --git a/nxs/tree.py b/nxs/tree.py
 index 6b4365e..1ed6e77 100644
 --- a/nxs/tree.py
