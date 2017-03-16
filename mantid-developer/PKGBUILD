@@ -2,7 +2,7 @@
 
 pkgname=mantid-developer
 pkgver=0.1
-pkgrel=4
+pkgrel=5
 pkgdesc="Meta package to install all the dependancies required to build Mantid."
 url="http://www.mantidproject.org"
 arch=('any')
@@ -10,12 +10,17 @@ licence=('unknown')
 depends=('boost'
 	 'cmake'
 	 'doxygen'
+	 'gcc'
+	 'git'
 	 'gperftools'
 	 'gsl'
 	 'hdf4'
 	 'hdf5-cpp-fortran'
+	 'intel-tbb'
 	 'ipython2-notebook'
 	 'libnexus'
+	 'libxslt'
+	 'make'
 	 'muparser'
 	 'opencascade'
 	 'poco'

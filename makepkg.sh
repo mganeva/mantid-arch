@@ -42,30 +42,42 @@ size = $(du -sb --apparent-size | awk '{print $1}')
 
 arch = $arch
 
-depend = libnexus
-depend = qwt5
-depend = qwtplot3d
-depend = qscintilla
 depend = boost-libs
-depend = poco
-depend = muparser
-depend = qtwebkit
-depend = jsoncpp
+depend = glu
+depend = gperftools
+depend = gsl
+depend = hdf4
+depend = hdf5-cpp-fortran
+depend = intel-tbb
 depend = ipython2
+depend = jsoncpp
+depend = libnexus
+depend = libxslt
+depend = muparser
+depend = opencascade
+depend = poco
 depend = python2
+depend = python2-dateutil
+depend = python2-h5py
 depend = python2-numpy
 depend = python2-pyqt4
 depend = python2-pyzmq
+depend = python2-qtconsole
 depend = python2-scipy
 depend = python2-sip
 depend = python2-yaml
-depend = hdf5-cpp-fortran
-depend = hdf4
-depend = gsl
+depend = qscintilla
+depend = qtwebkit
+depend = qwt5
+depend = qwtplot3d
 
-makedepend = cmake
+optdepend = python2-nxs
+
 makedepend = boost
+makedepend = cmake
 makedepend = doxygen
+makedepend = gcc
+makedepend = make
 
 EOF
 
