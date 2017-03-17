@@ -6,7 +6,9 @@
 #
 
 # install package
-# cd to build directory
+# cd to build directory or set BUILD_DIR
+BUILD_DIR=$PWD
+echo $BUILD_DIR
 rm -rf pkg
 mkdir pkg
 fakeroot -- make DESTDIR=pkg install
@@ -19,10 +21,18 @@ ln -s /opt/Mantid/bin/launch_mantidplot.sh pkg/opt/Mantid/bin/mantidplot
 ln -s /opt/Mantid/etc/mantid.sh pkg/etc/profile.d/
 ln -s /opt/Mantid/etc/mantid.csh pkg/etc/profile.d/
 
+# install paraview, Paraview needs to be built with CMAKE_INSTALL_PREFIX=/
+# get paraview build directory from CMakeCache.txt
+PARAVIEW_BUILD_DIR=`grep ParaView_DIR CMakeCache.txt | sed 's/.*=//'`
+echo $PARAVIEW_BUILD_DIR
+cd $PARAVIEW_BUILD_DIR
+fakeroot -- make DESTDIR=$BUILD_DIR/pkg/opt/Mantid/ install
+cd $BUILD_DIR
+
 # create .PKGINFO
 pkgver=`bin/MantidPlot --version | sed 's/ .*$//'`
 cd pkg
-pkgname=mantidnightly
+pkgname=mantid
 pkgrel=1
 pkgdesc="Data analysis toolkit for neutron based instrument data"
 url="http://www.mantidproject.org/"
