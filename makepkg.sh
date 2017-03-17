@@ -86,8 +86,6 @@ optdepend = python2-nxs
 makedepend = boost
 makedepend = cmake
 makedepend = doxygen
-makedepend = gcc
-makedepend = make
 
 EOF
 
