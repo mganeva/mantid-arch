@@ -21,12 +21,12 @@ ln -s /opt/Mantid/bin/launch_mantidplot.sh pkg/opt/Mantid/bin/mantidplot
 ln -s /opt/Mantid/etc/mantid.sh pkg/etc/profile.d/
 ln -s /opt/Mantid/etc/mantid.csh pkg/etc/profile.d/
 
-# install paraview, Paraview needs to be built with CMAKE_INSTALL_PREFIX=/
+# install paraview
 # get paraview build directory from CMakeCache.txt
 PARAVIEW_BUILD_DIR=`grep ParaView_DIR CMakeCache.txt | sed 's/.*=//'`
 echo $PARAVIEW_BUILD_DIR
 cd $PARAVIEW_BUILD_DIR
-fakeroot -- make DESTDIR=$BUILD_DIR/pkg/opt/Mantid/ install
+DESTDIR=$BUILD_DIR/pkg/opt/Mantid fakeroot -- cmake -DCMAKE_INSTALL_PREFIX= -P cmake_install.cmake
 cd $BUILD_DIR
 
 # create .PKGINFO
@@ -93,4 +93,4 @@ EOF
 fakeroot -- env LANG=C bsdtar -czf .MTREE --format=mtree --options='!all,use-set,type,uid,gid,mode,time,size,md5,sha256,link' .PKGINFO *
 
 # package
-fakeroot -- env LANG=C bsdtar -cf - .MTREE .PKGINFO * | xz -c -z - > ../$pkgname-$pkgver-$pkgrel-$arch.tar.xz
+fakeroot -- env LANG=C bsdtar -cf - .MTREE .PKGINFO * | xz -T 0 -c -z - > ../$pkgname-$pkgver-$pkgrel-$arch.tar.xz
