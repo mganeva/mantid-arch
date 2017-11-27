@@ -15,18 +15,18 @@ fakeroot -- make DESTDIR=pkg install
 mkdir -p pkg/etc/profile.d
 
 # fix executable name, add symlinks, install profile.d scripts
-mv pkg/opt/Mantid/bin/MantidPlot pkg/opt/Mantid/bin/MantidPlot_exe
-ln -s /opt/Mantid/bin/launch_mantidplot.sh pkg/opt/Mantid/bin/MantidPlot
-ln -s /opt/Mantid/bin/launch_mantidplot.sh pkg/opt/Mantid/bin/mantidplot
-ln -s /opt/Mantid/etc/mantid.sh pkg/etc/profile.d/
-ln -s /opt/Mantid/etc/mantid.csh pkg/etc/profile.d/
+mv pkg/opt/mantidunstable/bin/MantidPlot pkg/opt/mantidunstable/bin/MantidPlot_exe
+ln -s /opt/mantidunstable/bin/launch_mantidplot.sh pkg/opt/mantidunstable/bin/MantidPlot
+ln -s /opt/mantidunstable/bin/launch_mantidplot.sh pkg/opt/mantidunstable/bin/mantidplot
+ln -s /opt/mantidunstable/etc/mantid.sh pkg/etc/profile.d/
+ln -s /opt/mantidunstable/etc/mantid.csh pkg/etc/profile.d/
 
 # install paraview
 # get paraview build directory from CMakeCache.txt
 PARAVIEW_BUILD_DIR=`grep ParaView_DIR CMakeCache.txt | sed 's/.*=//'`
 echo $PARAVIEW_BUILD_DIR
 cd $PARAVIEW_BUILD_DIR
-DESTDIR=$BUILD_DIR/pkg/opt/Mantid fakeroot -- cmake -DCMAKE_INSTALL_PREFIX= -P cmake_install.cmake
+DESTDIR=$BUILD_DIR/pkg/opt/mantidunstable fakeroot -- cmake -DCMAKE_INSTALL_PREFIX= -P cmake_install.cmake
 cd $BUILD_DIR
 
 # create .PKGINFO
@@ -76,12 +76,10 @@ depend = python2-qtconsole
 depend = python2-scipy
 depend = python2-sip
 depend = python2-yaml
-depend = qscintilla
+depend = qscintilla-qt4
 depend = qtwebkit
 depend = qwt5
 depend = qwtplot3d
-
-optdepend = python2-nxs
 
 makedepend = boost
 makedepend = cmake

@@ -7,7 +7,7 @@ It includes the PKGBUILD files for the following packages:
 * libnexus (install hdf4 before building this)
 * mantid-developer (Meta package to install the dependencies that mantid requires to build)
 
-To build mantid use the following cmake command then run `make`:
+To build mantid with python 2 use the following cmake command then run `make`:
 ```sh
 cmake -DPYTHON_EXECUTABLE=/usr/bin/python2 .
 ```
